@@ -41,7 +41,7 @@ This analysis is in response to a request to identify employees who may be retir
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/unique_titles.png) | 
   Complete set of results are available in [unique_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/unique_titles.csv)
 * ### Counts by job title for active eligible retirees
-  The third artifact counts, by job title, for all active eligible retirees. 
+  The third artifact counts, by job title, all active eligible retirees. 
 
   Here is the query used:
   ```
@@ -57,12 +57,12 @@ This analysis is in response to a request to identify employees who may be retir
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/retiring_titles.png) | 
   Complete set of results are available in [retiring_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retiring_tiles.csv)
 
-* ### Counts by job title for active eligible retirees
+* ### Extracting employees who could be mentors
   The fourth artifact identifies employees eligible to participate in a mentorship program. Eligibility is limited to current employees born in 1965.
 
-  **Notes for Deliverable 2:** 
-  - For step 8, the filter must use the **birth_date** column as the instructions ask for employees **born** in 1965.
-  - The table in Step 11 is incorrect as it doesn’t display the **current title** for some employees. 
+  **Note for Deliverable 2:** 
+  - The table in Step 11 is incorrect as it doesn’t display the **current title** for some employees. For example, the current job title for employee no. 10291 is "Senior Staff". 
+  ![]()
 
   Here is the query used:
   ```
@@ -123,7 +123,7 @@ There are 1,549 potential mentors. With around 72K pending retirements, each men
 
 * Observation 2:
 
-    It is clear that selecting only active employees born in 1965 would result in too few mentors to train new hires. Expanding the pool of potential mentors to those born between 1960 to 1965 provides 117,138 results - which is the output of the query below. This far surpases the 72K of eligible retirees. This also allows for a mentor to mentee ratio of less than 3, and further permits some of the potential mentors to opt out of this role.
+    It is clear that selecting only active employees born in 1965 would result in too few mentors to train new hires. Expanding the pool of potential mentors to those born between 1960 to 1965 provides 117,138 results - which is the output of the query below. This far surpases the 72K of eligible retirees. This also allows for a one to one mentor to mentee ratio, and further permits some of the potential mentors to opt out of this role.
 
     ```
     SELECT COUNT(*) FROM
