@@ -95,7 +95,7 @@ UNION
 (SELECT 'Eligible To Retire', COUNT(*) FROM unique_titles);
 ```
 Here are the query results:
-![]()
+![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Count%20By%20Category.png)
 
 A total of 72,458 employees are eligible to retire. This represents 30.2% of the current active employees. This poses a significant risk to the company operations and a pending loss of institutional knowledge. 
 ### Potential for mentoring replacements for retirees
@@ -116,6 +116,6 @@ Using the following queries:
 | Retirements by Department | Mentors by Deparment | 
 | --- | --- |
 | ``` SELECT COUNT(ut.emp_no) as "count", de.dept_no, d.dept_name FROM unique_titles as ut JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ```| ``` SELECT COUNT(me.emp_no) as "count", de.dept_no, d.dept_name FROM mentorship_eligibility as me JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ``` |
-| | |
+| ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Retirements%20By%20Department.png) | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Mentors%20By%20Department.png)|
 
 This departmental comparison show that some departments have a greater challenger (..a.sdfasdf)
