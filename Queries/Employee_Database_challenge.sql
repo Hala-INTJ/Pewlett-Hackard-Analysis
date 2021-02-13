@@ -24,7 +24,7 @@ ORDER BY count DESC;
 -- Creating a new table "mentorship_eligibility" for current employees 
 -- who are eligible to participate in a mentorhsip program
 SELECT DISTINCT ON (em.emp_no) em.emp_no, em.first_name, em.last_name, em.birth_date, de.from_date, de.to_date, ti.title
-INTO mentorhsip_eligibility
+INTO mentorship_eligibility
 FROM employees as em 
 JOIN dept_emp as de using (emp_no)
 JOIN titles as ti using (emp_no)

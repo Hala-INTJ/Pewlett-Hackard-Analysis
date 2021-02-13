@@ -69,7 +69,7 @@ This analysis is in response to a request to identify employees who may be retir
   ```
   SELECT DISTINCT ON (em.emp_no) em.emp_no, em.first_name, em.last_name, em.birth_date,
   de.from_date, de.to_date, ti.title
-  INTO mentorhsip_eligibility
+  INTO mentorship_eligibility
   FROM employees as em 
   JOIN dept_emp as de using (emp_no)
   JOIN titles as ti using (emp_no)
@@ -78,10 +78,10 @@ This analysis is in response to a request to identify employees who may be retir
   ORDER BY em.emp_no, de.to_date DESC;
   ```
 
-  | Sample of Results in *mentorhsip_eligibility* Table | 
+  | Sample of Results in *mentorship_eligibility* Table | 
   | --- |
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/mentorship_eligibility.png) | 
-  Complete set of results are available in [mentorhsip_eligibility.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/mentorship_eligibility.csv)
+  Complete set of results are available in [mentorship_eligibility.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/mentorship_eligibility.csv)
 ## Pewlett Hackard Analysis Summary
 
  
