@@ -109,7 +109,7 @@ SELECT COUNT(*) as "count"
 FROM mentorship_eligibility;
 ```
 
-There are 1,549 potential mentors. With around 72K pending retirements, eacg mentor would need to take on 47 new hires to maintain the current employment levels.
+There are 1,549 potential mentors. With around 72K pending retirements, each mentor would need to take on 47 new hires to maintain the current employment levels.
 ### Further Analysis
 
 Using the following queries:
