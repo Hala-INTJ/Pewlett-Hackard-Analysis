@@ -84,4 +84,38 @@ This analysis is in response to a request to identify employees who may be retir
   Complete set of results are available in [mentorship_eligibility.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/mentorship_eligibility.csv)
 ## Pewlett Hackard Analysis Summary
 
- 
+### Impact analysis on the number of eligible retirees
+How many roles will need to be filled as the "silver tsunami" begins to make an impact?
+
+Using the following query:
+```
+(SELECT 'Current Employee Count' as Category, COUNT(*) FROM dept_emp 
+WHERE to_date = '9999-01-01')
+UNION
+(SELECT 'Eligible To Retire', COUNT(*) FROM unique_titles);
+```
+Here are the query results:
+![]()
+
+A total of 72,458 employees are eligible to retire. This represents 30.2% of the current active employees. This poses a significant risk to the company operations and a pending loss of institutional knowledge. 
+### Potential for mentoring replacements for retirees
+Are there enough qualified, retirement-ready employees 
+in the departments to mentor the next generation of Pewlett Hackard employees?
+
+Using the following query:
+```
+SELECT COUNT(*) as "count"
+FROM mentorship_eligibility;
+```
+
+There are 1,549 potential mentors. With around 72K pending retirements, eacg mentor would need to take on 47 new hires to maintain the current employment levels.
+### Further Analysis
+
+Using the following queries:
+
+| Retirements by Department | Mentors by Deparment | 
+| --- | --- |
+| ``` SELECT COUNT(ut.emp_no) as "count", de.dept_no, d.dept_name FROM unique_titles as ut JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ```| ``` SELECT COUNT(me.emp_no) as "count", de.dept_no, d.dept_name FROM mentorship_eligibility as me JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ``` |
+| | |
+
+This departmental comparison show that some departments have a greater challenger (..a.sdfasdf)
