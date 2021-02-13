@@ -95,6 +95,7 @@ UNION
 (SELECT 'Eligible To Retire', COUNT(*) FROM unique_titles);
 ```
 Here are the query results:
+
 ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Count%20By%20Category.png)
 
 A total of 72,458 employees are eligible to retire. This represents 30.2% of the current active employees. This poses a significant risk to the company operations and a pending loss of institutional knowledge. 
