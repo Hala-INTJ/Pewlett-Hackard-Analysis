@@ -24,10 +24,10 @@ This analysis is in response to a request to identify employees who may be retir
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/retirement_titles.png) | 
   Complete set of results are available in [retirement_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retirement_titles.csv)
 
-* ### Refining the the list of employees eligible for retirement
+* ### Refining the list of employees eligible for retirement
   The second artifact removed duplicate titles and empolyees that are not currently active. Where an employee had multiple titles, their current title was selected.
 
-  **Note:** The use of 'DISTINCT ON' in the following query is unneccessary as the 'WHERE' clause to remove the former employees also guaranatees a single record for each emp_no.
+  **Note:** The use of 'DISTINCT ON' in the following query is unneccessary. The 'WHERE' clause to remove the former employees guarantees a single record for each emp_no.
 
   Here is the query used:
   ```
@@ -41,8 +41,8 @@ This analysis is in response to a request to identify employees who may be retir
   | --- |
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/unique_titles.png) | 
   Complete set of results are available in [unique_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/unique_titles.csv)
-* ### Counts by title for active eligible retirees
-  The third artifact counts, by title, for all active eligible retirees. 
+* ### Counts by job title for active eligible retirees
+  The third artifact counts, by job title, for all active eligible retirees. 
 
   Here is the query used:
   ```
@@ -58,7 +58,7 @@ This analysis is in response to a request to identify employees who may be retir
   | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/retiring_titles.png) | 
   Complete set of results are available in [retiring_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retiring_tiles.csv)
 
-* ### Counts by title for active eligible retirees
+* ### Counts by job title for active eligible retirees
   The fourth artifact identifies employees eligible to participate in a mentorship program. Eligibility is limited to current employees born in 1965.
 
   **Notes for Deliverable 2:** 
@@ -67,7 +67,8 @@ This analysis is in response to a request to identify employees who may be retir
 
   Here is the query used:
   ```
-  SELECT DISTINCT ON (em.emp_no) em.emp_no, em.first_name, em.last_name, em.birth_date, de.from_date, de.to_date, ti.title
+  SELECT DISTINCT ON (em.emp_no) em.emp_no, em.first_name, em.last_name, em.birth_date,
+  de.from_date, de.to_date, ti.title
   INTO mentorhsip_eligibility
   FROM employees as em 
   JOIN dept_emp as de using (emp_no)
