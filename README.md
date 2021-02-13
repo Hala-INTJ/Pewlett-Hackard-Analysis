@@ -1,7 +1,6 @@
 # Challenge 7: Pewlett Hackard Analysis
 ## Overview of The Pewlett Hackard Analysis
 This analysis is in response to a request to identify employees who may be retiring soon and also to identify employees who are eligible to participate in a mentorship program. A number of data base queries and data exports will be prepared for analysis.
-
 ## Pewlett Hackard Analysis Results
 
 * ### Extracting employees eligible for retirement
@@ -114,14 +113,12 @@ There are 1,549 potential mentors. With around 72K pending retirements, each men
 
 * Observation 1:
 
-    Using the following queries:
+    The departmental comparison below shows that the Development, Production and Sales departments have the largest number of individuals retiring soon. The Finance department would need to assign 57 new hires to each mentor, which would be challenging. In addition, both the Production and Quality Management departments would require each mentor to take on 50 or more new hires.
 
     | Retirements by Department | Mentors by Deparment | 
     | --- | --- |
     | ``` SELECT COUNT(ut.emp_no) as "count", de.dept_no, d.dept_name FROM unique_titles as ut JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ```| ``` SELECT COUNT(me.emp_no) as "count", de.dept_no, d.dept_name FROM mentorship_eligibility as me JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ``` |
     | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Retirements%20By%20Department.png) | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Mentors%20By%20Department.png)|
-
-    This departmental comparison show that Development, Production and Sales departments have the largest number of individuals retiring soon. The Finance department would need to assign 57 new hires to each mentor, which would be challenging. In addition, both the Production and Quality Management departments would reuire 50 or more new hires for each mentor. 
 
 
 * Observation 2:
