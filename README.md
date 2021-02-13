@@ -24,9 +24,9 @@ This analysis is in response to a request to identify employees who may be retir
   Complete set of results are available in [retirement_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retirement_titles.csv)
 
 * ### Refining the list of employees eligible for retirement
-  The second artifact removed duplicate titles and empolyees that are not currently active. Where an employee had multiple titles, their current title was selected.
+  The second artifact removed duplicate titles and employees that are not currently active. Where an employee had multiple titles, their current title was selected.
 
-  **Note:** The use of 'DISTINCT ON' in the following query is unneccessary. The 'WHERE' clause to remove the former employees guarantees a single record for each emp_no.
+  **Note:** The use of 'DISTINCT ON' in the following query is unnecessary. The 'WHERE' clause to remove the former employees guarantees a single record for each emp_no.
 
   Here is the query used:
   ```
@@ -124,7 +124,7 @@ There are 1,549 potential mentors. With around 72K pending retirements, each men
 
 * Observation 2:
 
-    It is clear that selecting only active employees born in 1965 would result in too few mentors to train new hires. Expanding the pool of potential mentors to those born between 1960 to 1965 provides 117,138 results - which is the output of the query below. This far surpases the 72K of eligible retirees. This also allows for a one to one mentor to mentee ratio, and further permits some of the potential mentors to opt out of this role.
+    It is clear that selecting only active employees born in 1965 would result in too few mentors to train new hires. Expanding the pool of potential mentors to those born between 1960 to 1965 provides 117,138 results - which is the output of the query below. This far surpasses the 72K of eligible retirees. This also allows for a one to one mentor to mentee ratio, and further permits some of the potential mentors to opt out of this role.
 
     ```
     SELECT COUNT(*) FROM
