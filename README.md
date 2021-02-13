@@ -21,8 +21,8 @@ This analysis is in response to a request to identify employees who may be retir
   ```
   | Sample of Results in *retirement_titles* Table | 
   | --- |
-  | ![]() | 
-  Complete set of results are available in [retirement_titles.csv]()
+  | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/retirement_titles.png) | 
+  Complete set of results are available in [retirement_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retirement_titles.csv)
 
 * ### Refining the the list of employees eligible for retirement
   The second artifact removed duplicate titles and empolyees that are not currently active. Where an employee had multiple titles, their current title was selected.
@@ -39,8 +39,8 @@ This analysis is in response to a request to identify employees who may be retir
   ```
   | Sample of Results in *unique_titles* Table | 
   | --- |
-  | ![]() | 
-  Complete set of results are available in [unique_titles.csv]()
+  | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/unique_titles.png) | 
+  Complete set of results are available in [unique_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/unique_titles.csv)
 * ### Counts by title for active eligible retirees
   The third artifact counts, by title, for all active eligible retirees. 
 
@@ -55,8 +55,8 @@ This analysis is in response to a request to identify employees who may be retir
 
   | Results in *retiring_titles* Table | 
   | --- |
-  | ![]() | 
-  Complete set of results are available in [retiring_titles.csv]()
+  | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/retiring_titles.png) | 
+  Complete set of results are available in [retiring_titles.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/retiring_tiles.csv)
 
 * ### Counts by title for active eligible retirees
   The fourth artifact identifies employees eligible to participate in a mentorship program. Eligibility is limited to current employees born in 1965.
@@ -79,8 +79,8 @@ This analysis is in response to a request to identify employees who may be retir
 
   | Sample of Results in *mentorhsip_eligibility* Table | 
   | --- |
-  | ![]() | 
-  Complete set of results are available in [mentorhsip_eligibility.csv]()
+  | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/mentorship_eligibility.png) | 
+  Complete set of results are available in [mentorhsip_eligibility.csv](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Data/mentorship_eligibility.csv)
 ## Pewlett Hackard Analysis Summary
 
  
