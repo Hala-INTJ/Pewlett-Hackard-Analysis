@@ -112,11 +112,29 @@ FROM mentorship_eligibility;
 There are 1,549 potential mentors. With around 72K pending retirements, each mentor would need to take on 47 new hires to maintain the current employment levels.
 ### Further Analysis
 
-Using the following queries:
+* Observation 1:
 
-| Retirements by Department | Mentors by Deparment | 
-| --- | --- |
-| ``` SELECT COUNT(ut.emp_no) as "count", de.dept_no, d.dept_name FROM unique_titles as ut JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ```| ``` SELECT COUNT(me.emp_no) as "count", de.dept_no, d.dept_name FROM mentorship_eligibility as me JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ``` |
-| ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Retirements%20By%20Department.png) | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Mentors%20By%20Department.png)|
+    Using the following queries:
 
-This departmental comparison show that some departments have a greater challenger (..a.sdfasdf)
+    | Retirements by Department | Mentors by Deparment | 
+    | --- | --- |
+    | ``` SELECT COUNT(ut.emp_no) as "count", de.dept_no, d.dept_name FROM unique_titles as ut JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ```| ``` SELECT COUNT(me.emp_no) as "count", de.dept_no, d.dept_name FROM mentorship_eligibility as me JOIN dept_emp as de USING (emp_no) JOIN departments as d USING (dept_no) GROUP BY de.dept_no, d.dept_name ORDER BY de.dept_no ``` |
+    | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Retirements%20By%20Department.png) | ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Mentors%20By%20Department.png)|
+
+    This departmental comparison show that Development, Production and Sales departments have the largest number of individuals retiring soon. The Finance department would need to assign 57 new hires to each mentor, which would be challenging. In addition, both the Production and Quality Management departments would reuire 50 or more new hires for each mentor. 
+
+
+* Observation 2:
+
+    It is clear that selecting only active employees born in 1965 would result in too few mentors to train new hires. Expanding the pool of potential mentors to those born between 1960 to 1965 provides 117,138 results - which is the output of the query below. This far surpases the 72K of eligible retirees. This also allows for a mentor to mentee ratio of less than 3, and further permits some of the potential mentors to opt out of this role.
+
+    ```
+    SELECT COUNT(*) FROM
+    (SELECT DISTINCT ON (em.emp_no) em.emp_no, em.first_name, em.last_name,
+    em.birth_date, de.from_date, de.to_date, ti.title
+    FROM employees as em 
+    JOIN dept_emp as de using (emp_no)
+    JOIN titles as ti using (emp_no)
+    WHERE (em.birth_date BETWEEN '1960-01-01' AND '1965-12-31')
+    ORDER BY em.emp_no) As mentor_pool;
+    ```
