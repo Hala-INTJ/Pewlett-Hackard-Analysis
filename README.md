@@ -62,7 +62,8 @@ This analysis is in response to a request to identify employees who may be retir
 
   **Note for Deliverable 2:** 
   - The table in Step 11 is incorrect as it doesn’t display the **current title** for some employees. For example, the current job title for employee no. 10291 is "Senior Staff". 
-  ![]()
+  
+  ![](https://github.com/Hala-INTJ/Pewlett-Hackard-Analysis/blob/main/Queries/Job%20Titles%20for%2010291.png)
 
   Here is the query used:
   ```
